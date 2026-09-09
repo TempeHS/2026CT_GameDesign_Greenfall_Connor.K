@@ -33,16 +33,23 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool canInput = true;
 
+    private ParticleSystem.EmissionModule walkParticle;
+
+    private bool hasBegunWalkEmitting = false;
+    private float walkEmitCD = 0.0f;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform bufferCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem walk;
 
 
     // Update is called once per frame
     private void Awake()
     {
+        walkParticle = walk.emission;
         playerDeathScreen.SetActive(false);
 
         playerMaxHealth = 8.0f;
@@ -80,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
         playerKBTime -= Time.deltaTime;
         playerAttackCD -= Time.deltaTime;
         playerAttackTime -= Time.deltaTime;
+        walkEmitCD -= Time.deltaTime;
         
 
         if (playerHealth > playerMaxHealth)
@@ -117,6 +125,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("isGrounded", true);
                 animator.SetBool("isFalling", false);
+                if(hasBegunWalkEmitting == true && walkEmitCD < 0.0f){
+                    walkParticle.enabled = true;
+
+                } else if(hasBegunWalkEmitting == false){
+                    hasBegunWalkEmitting = true;
+                    walkEmitCD = 0.15f;
+                }
                 if (jumpQueued)
                 {
                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
@@ -130,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                hasBegunWalkEmitting = false;
+                walkParticle.enabled = false;
                 grounded = false;
                 animator.SetBool("isGrounded", false);
             }

@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccf827eb757b8b45833837770000820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parralaxEffect: 0.01
+  parralaxEffect: 0.02
 --- !u!1 &1001077282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccf827eb757b8b45833837770000820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parralaxEffect: 0.002
+  parralaxEffect: 0.01
 --- !u!1 &1805980424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccf827eb757b8b45833837770000820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parralaxEffect: 0.005
+  parralaxEffect: 0.01
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
