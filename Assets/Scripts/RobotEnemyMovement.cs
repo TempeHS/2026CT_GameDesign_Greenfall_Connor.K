@@ -11,6 +11,7 @@ public class RobotEnemyMovement : MonoBehaviour
     [SerializeField] private int startDir = 1;
     [SerializeField] private bool stayOnLedges = true;
     [SerializeField] private ParticleSystem RobotDeath;
+    [SerializeField] private ParticleSystem Sparks;
     private Vector2 attackCheckSize = new Vector2(1.5f, 1.4f);
 
 
@@ -39,9 +40,12 @@ public class RobotEnemyMovement : MonoBehaviour
     {
         if(enemyHealth<=0.0f){
             RobotDeath.transform.position = rb.transform.position;
-            RobotDeath.Play();
+            RobotDeath.Play();  
+            Sparks.transform.position = rb.transform.position;
+            Sparks.Play();          
             isAlive = false;
             gameObject.SetActive(false); 
+            
 
         }
         atkChargeTime -= Time.deltaTime;
