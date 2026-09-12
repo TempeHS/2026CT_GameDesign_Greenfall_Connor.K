@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool canInput = true;
 
     private ParticleSystem.EmissionModule walkParticle;
+    private ParticleSystem.EmissionModule dashParticle;
 
     private bool hasBegunWalkEmitting = false;
     private float walkEmitCD = 0.0f;
@@ -44,11 +45,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem walk;
+    [SerializeField] private ParticleSystem dash;
 
 
     // Update is called once per frame
     private void Awake()
     {
+        dashParticle = dash.emission;
         walkParticle = walk.emission;
         playerDeathScreen.SetActive(false);
 
@@ -218,10 +221,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashTime > 0)
             {
+                dashParticle.enabled = true;
                 rb.linearVelocity = new Vector2(dashDir * 30, 0.1f);
             }
             else
             {
+                dashParticle.enabled = false;
                 rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
             }
 

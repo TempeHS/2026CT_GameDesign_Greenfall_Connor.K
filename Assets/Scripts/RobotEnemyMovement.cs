@@ -12,6 +12,7 @@ public class RobotEnemyMovement : MonoBehaviour
     [SerializeField] private bool stayOnLedges = true;
     [SerializeField] private ParticleSystem RobotDeath;
     [SerializeField] private ParticleSystem Sparks;
+    [SerializeField] private ParticleSystem DamageSparks;
     private Vector2 attackCheckSize = new Vector2(1.5f, 1.4f);
 
 
@@ -38,7 +39,8 @@ public class RobotEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(enemyHealth<=0.0f){
+        
+        if (enemyHealth<=0.0f){
             RobotDeath.transform.position = rb.transform.position;
             RobotDeath.Play();  
             Sparks.transform.position = rb.transform.position;
@@ -188,6 +190,8 @@ public class RobotEnemyMovement : MonoBehaviour
             enemyHealth -= player.damage;
             if (player.flashRed)
             {
+                DamageSparks.transform.position = rb.transform.position;
+                DamageSparks.Play();
                 animator.SetTrigger("flashRed");
             }
             
