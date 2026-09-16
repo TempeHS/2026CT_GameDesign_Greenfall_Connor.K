@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
     private float speed = 8f;
-    private float jumpingPower = 12f;
+    private float jumpingPower =18.5f;
     private bool jumpQueued = false;
     private bool isFacingRight = true;
     private float airTime = 0.0f;
@@ -179,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                SoundEffectManager.Play("PlayerAttack");
                 animator.SetTrigger("attack");
                 playerAttackTime=0.4f;
 

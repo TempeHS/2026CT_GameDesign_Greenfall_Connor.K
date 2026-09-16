@@ -1,5 +1,6 @@
 using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundEffectManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SoundEffectManager : MonoBehaviour
     private static AudioSource audioSource;
     private static SoundEffectLibrary soundEffectLibrary;
 
-    [SerializeField] private SliderJoint2D sfxSlider;
+    [SerializeField] private Slider sfxSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -28,16 +29,24 @@ public class SoundEffectManager : MonoBehaviour
     public static void Play(string soundName)
     {
         AudioClip audioClip = soundEffectLibrary.GetRandomClip(soundName);
+        if(audioClip != null){
+            audioSource.PlayOneShot(audioClip);
+        }
 
     }
     void Start()
     {
+        sfxSlider.onValueChanged.AddListener(delegate {OnValueChanged();});
         
+    }
+    public static void SetVolume(float volume){
+        audioSource.volume = volume;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnValueChanged(){
+        SetVolume(sfxSlider.value);
     }
+
+
 }
