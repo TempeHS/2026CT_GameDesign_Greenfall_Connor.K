@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e084b6573ad917140b606432ca3268de, type: 3}
-  m_Name: Heal
+  m_Name: Thing
   m_EditorClassIdentifier: 
-  itemName: Heal
-  itemSprite: {fileID: 2409662209147966537, guid: 3c7e894d4d93b564a92b8c1cf66c3661, type: 3}
-  itemHeal: 1
+  itemName: death
+  itemSprite: {fileID: 6417393693754540464, guid: 6f4b6a1289ccdb04c8e5c9a6bbe6dd25, type: 3}
+  itemHeal: 0
   itemAddMaxHPAmount: 0
-  itemDamage: 0
+  itemDamage: 9999
