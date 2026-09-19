@@ -89,26 +89,27 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 3.1 Core Mechanics
 | ID | Mechanic | Description | Implemented In (Script/Object) |
 |---|---|---|---|
-| M-1 |Player Dash | The player can use the LShift key to do a horizontal dash on a cooldown | PlayerMovement |
+| M-1 | Pause Game | yeah | PlayerMovement |
 | M-2 | Checkpoint | | |
 | M-3 | Health| | |
-| M-4 | | | |
-| M-5 | | | |
+| M-4 | Interacting | | |
+| M-5 | Talking | | |
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
+| Horizontal Movement | A/D | Allows the player to move sideways |
+| Jump | Space | Allows the player to jump |
+| Dash | LShift | Player rapidly moves in a horizontal direction, ignoring gravity |
+| Attack | Mouse Left Click | Allows player to hit and destroy enemies |
+| Interact | E | Allows the player to interact with checkpoints and text signs |
 
 ### 3.3 Physics & Collision
 | Feature | Description |
 |---|---|
-| | |
-| | |
-| | |
+| Ground | The thing the player moves and jumps on |
+| Spikes | Knocks the player back on contact |
+| Enemy Attack | The player is knoced away when they are hit |
 
 ### 3.4 Game Loop
 | Stage | Description |
@@ -133,10 +134,11 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
+| Player Walk Particle | player walks and leaves dust | |
+| Player Dash Particle | whoosh | |
+| Tom pearls yummy soup | | |
+| Enemy Gore | when the enemy dies, it leaves parts on the ground | |
+| Enemy Death Sparks | The enemy is a robot to it explodes into electricity | |
 
 > Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
 
@@ -158,9 +160,14 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| Player walk | | | |
+| Player Attack | | | |
+| Player Dash | | | |
+| Player Jump | | | |
+| Enemy walk | | | |
+| Enemy Dash | | | |
+| Swaying Grass | | | |
+| Front Background Parallax | | | |
 
 > Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
 
