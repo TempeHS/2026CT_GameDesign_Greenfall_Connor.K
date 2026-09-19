@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class InteractionDetector : MonoBehaviour
-{   
+{
+    
     public Transform player;
     public IInteractable interactableInRange = null;
     public GameObject interactableObject=null;

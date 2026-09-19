@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "Use",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "c8f39204-ba5f-4c7b-9e6c-0f19fdfeffa9",
+            "actions": [
+                {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "110028f5-c087-4e27-aff8-991268e00043",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4d5b49e2-d716-4d30-bf19-e71c35c94029",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71254e71-a544-4b49-8a5f-60029e9a223a",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
