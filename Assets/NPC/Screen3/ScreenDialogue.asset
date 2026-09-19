@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: ScreenDialogue
   m_EditorClassIdentifier: 
   npcName: Sign
-  npcPortrait: {fileID: 1597984282450990430, guid: b441a5ca609d6e54e81308d6397ece99, type: 3}
+  npcPortrait: {fileID: 1597984282450990430, guid: 5d8f0f5fa05861e47aaa20fe3a2b43a7, type: 3}
   dialogueLines:
-  - 'Nature place:'
-  - 200km -->
-  - lol ur cooked
-  autoProgressLines: 000000
+  - dont fall
+  autoProgressLines: 00
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 2614681742ef36a44a1595f5c9a634da, type: 3}

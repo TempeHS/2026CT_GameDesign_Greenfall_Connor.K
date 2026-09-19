@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SoundEffectManager.Play("PlayerAttack");
+                SoundEffectManager.Play("PlayerAttack", true);
                 animator.SetTrigger("attack");
                 playerAttackTime=0.4f;
 
@@ -196,6 +196,8 @@ public class PlayerMovement : MonoBehaviour
             playerAttackBox.SetActive(false);
         }
         if(playerHealth<=0.0f && !isDead){
+            MusicManager.PauseBGM();
+            SoundEffectManager.Play("PlayerDeath", false);
             animator.SetTrigger("death");
             isDead = true;
             rb.linearVelocity = Vector2.zero;
@@ -282,6 +284,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Death"))
+        {
+            playerHealth -= 100;
+        }
         Vector2 contactPoint = other.ClosestPoint(transform.position);
         Vector2 pushDirection = ((Vector2)transform.position - contactPoint);
         pushDirection.x = GetDirection(contactPoint);
@@ -329,6 +335,7 @@ public class PlayerMovement : MonoBehaviour
         playerHealth = playerMaxHealth;
         rb.transform.position = respawnPos;
         isDead = false;
+        MusicManager.PlayBGM(true);
         animator.SetTrigger("respawn");
         playerDeathScreen.SetActive(false);
         Time.timeScale=1;

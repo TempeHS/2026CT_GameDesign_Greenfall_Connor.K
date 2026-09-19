@@ -85,6 +85,7 @@ public class NPC : MonoBehaviour, IInteractable
             foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
             {
                 dialogueText.text += letter;
+            SoundEffectManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch);
                 yield return new WaitForSecondsRealtime(dialogueData.typingSpeed);
             }
             isTyping = false;
@@ -104,9 +105,9 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
         PlayerMovement.canInput = true;
-        id.interactableInRange = null;
-        id.interactableObject=null;
-        id.interactableInRangeDist = 999999.9999f;
+        //id.interactableInRange = null;
+        //id.interactableObject=null;
+        //id.interactableInRangeDist = 999999.9999f;
     }
 
     public void outline()

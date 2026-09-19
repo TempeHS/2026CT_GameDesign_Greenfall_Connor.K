@@ -28,6 +28,7 @@ public class RobotEnemyMovement : MonoBehaviour
     public float enemyHealth = 3.0f;
     public float enemyKBTime = 0.0f;
     public bool isAlive = true;
+    private bool hasPlayedSound = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -64,8 +65,17 @@ public class RobotEnemyMovement : MonoBehaviour
         movement.y = rb.linearVelocity.y;
         rb.linearVelocity =  movement;
         SetDir();
+
         if (atkChargeTime<0.2f && atkChargeTime >0.1f)
         {
+            if (!hasPlayedSound) 
+            {
+                SoundEffectManager.Play("RobotAttack", true);
+                hasPlayedSound = true;
+            }
+
+            
+
             robotAttackBox.SetActive(true);
         }
         else
@@ -111,12 +121,15 @@ public class RobotEnemyMovement : MonoBehaviour
                 curentDir = -1;
                 atkChargeTime = 0.7f;
                 animator.SetTrigger("attack");
+                hasPlayedSound=false;
             }
             if (transform.position.x < Player.transform.position.x)
             {
                 curentDir = 1;
                 atkChargeTime = 0.7f;
                 animator.SetTrigger("attack");
+                hasPlayedSound = false;
+
             }
             stayOnLedges = false;
 

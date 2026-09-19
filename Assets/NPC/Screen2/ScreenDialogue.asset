@@ -15,16 +15,10 @@ MonoBehaviour:
   npcName: Sign
   npcPortrait: {fileID: 1597984282450990430, guid: b441a5ca609d6e54e81308d6397ece99, type: 3}
   dialogueLines:
-  - a different sign
-  - yeah
-  - ok
-  - sometyhinhg soemtheing
-  - sometyhinhg soemtheing
-  - sometyhinhg soemtheing
-  - sometyhinhg soemtheing
-  - sometyhinhg soemtheing
-  - sometyhinhg soemtheing
-  autoProgressLines: 010101000100010100
+  - also there are robots and they will kill u
+  - the thing next to me is a checkpoint
+  - u interact with it and then when u die u respawn there
+  autoProgressLines: 000000
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 2614681742ef36a44a1595f5c9a634da, type: 3}
