@@ -17,5 +17,5 @@ MonoBehaviour:
   itemHeal: 0
   itemAddMaxHPAmount: 0
   itemDamage: 0
-  speedBoostTime: 12
+  speedBoostTime: 24
   itemOutlineSprite: {fileID: -6024806544730637210, guid: f6a82c62f05b9c84181ad7ccef3e29fa, type: 3}

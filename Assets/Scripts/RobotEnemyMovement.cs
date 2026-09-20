@@ -13,6 +13,8 @@ public class RobotEnemyMovement : MonoBehaviour
     [SerializeField] private ParticleSystem RobotDeath;
     [SerializeField] private ParticleSystem Sparks;
     [SerializeField] private ParticleSystem DamageSparks;
+    [SerializeField] private GameObject HealItem;
+    [SerializeField] private GameObject SpeedItem;
     private Vector2 attackCheckSize = new Vector2(1.5f, 1.4f);
 
 
@@ -29,6 +31,7 @@ public class RobotEnemyMovement : MonoBehaviour
     public float enemyKBTime = 0.0f;
     public bool isAlive = true;
     private bool hasPlayedSound = false;
+    private Vector2 itemSpawnPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -45,7 +48,23 @@ public class RobotEnemyMovement : MonoBehaviour
             RobotDeath.transform.position = rb.transform.position;
             RobotDeath.Play();  
             Sparks.transform.position = rb.transform.position;
-            Sparks.Play();          
+            Sparks.Play();
+
+            if (Random.Range(1, 100) > 70)
+            {
+                if(Random.Range(0,3) == 1)
+                {
+                    itemSpawnPos = new Vector2(transform.position.x, transform.position.y + 1);
+                    Instantiate(HealItem, itemSpawnPos, transform.rotation);
+                }
+                else
+                {
+                    itemSpawnPos = new Vector2(transform.position.x, transform.position.y + 1);
+                    Instantiate(SpeedItem, itemSpawnPos, transform.rotation);
+                }
+                
+            }
+            
             isAlive = false;
             gameObject.SetActive(false); 
             

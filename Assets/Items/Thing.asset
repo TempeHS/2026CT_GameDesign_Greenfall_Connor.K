@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Thing
   m_EditorClassIdentifier: 
   itemName: death
-  itemSprite: {fileID: 6417393693754540464, guid: 6f4b6a1289ccdb04c8e5c9a6bbe6dd25, type: 3}
+  itemSprite: {fileID: 1047076593502916766, guid: ba12e91a11672e2449da0abc8c21a146, type: 3}
   itemHeal: 0
   itemAddMaxHPAmount: 2
   itemDamage: 9999
-  itemOutlineSprite: {fileID: 7482667652216324306, guid: a1c93b0972874734b9fd7e5cd3a9d455, type: 3}
+  speedBoostTime: 0
+  itemOutlineSprite: {fileID: 1047076593502916766, guid: ba12e91a11672e2449da0abc8c21a146, type: 3}
