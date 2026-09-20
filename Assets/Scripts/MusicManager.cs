@@ -20,6 +20,7 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SetVolume(musicSlider.value);
     }
     void Start()
     {

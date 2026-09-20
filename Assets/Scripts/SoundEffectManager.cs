@@ -29,6 +29,7 @@ public class SoundEffectManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SetVolume(sfxSlider.value);
 
     }
     public static void Play(string soundName, bool randomPitch = false)

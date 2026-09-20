@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public float speedBoostTime = 0.0f;
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower =18.5f;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private ParticleSystem.EmissionModule walkParticle;
     private ParticleSystem.EmissionModule dashParticle;
+    private ParticleSystem.EmissionModule boostParticle;
 
     private bool hasBegunWalkEmitting = false;
     private float walkEmitCD = 0.0f;
@@ -46,12 +47,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem walk;
     [SerializeField] private ParticleSystem dash;
+    [SerializeField] private ParticleSystem boost;
 
 
     // Update is called once per frame
     private void Awake()
     {
         dashParticle = dash.emission;
+        boostParticle = boost.emission;
         walkParticle = walk.emission;
         playerDeathScreen.SetActive(false);
 
@@ -82,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         currentSpeed = rb.linearVelocity.x;
+        speedBoostTime -= Time.deltaTime;
         dashTime -= Time.deltaTime;
         dashCD -= Time.deltaTime;
         airTime += Time.deltaTime;
@@ -224,13 +228,30 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashTime > 0)
             {
+                if (speedBoostTime > 0)
+                {
+                    boostParticle.enabled = true;
+                }
+                else
+                {
+                    boostParticle.enabled = false;
+                }
                 dashParticle.enabled = true;
                 rb.linearVelocity = new Vector2(dashDir * 30, 0.1f);
             }
             else
             {
                 dashParticle.enabled = false;
-                rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+                if (speedBoostTime > 0)
+                {
+                    boostParticle.enabled = true;
+                    rb.linearVelocity = new Vector2(horizontal * speed*1.5f, rb.linearVelocity.y);
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+                    boostParticle.enabled = false;
+                }
             }
 
         }

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 3c7e894d4d93b564a92b8c1cf66c3661
+guid: 82bb7fae23af3044a879d29e8fe68df5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2409662209147966537
-    second: Flowa Gem_0
+      213: -3700062706568696823
+    second: Gold Heart_0
   - first:
-      213: -4062817238888957008
-    second: Flowa Gem_1
+      213: 6928345956949236966
+    second: Gold Heart_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flowa Gem_0
+      name: Gold Heart_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94492f42307d07120800000000000000
-      internalID: 2409662209147966537
+      spriteID: 90c6d48729cb6acc0800000000000000
+      internalID: -3700062706568696823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flowa Gem_1
+      name: Gold Heart_1
       rect:
         serializedVersion: 2
         x: 0
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0bbb0b83f39fd97c0800000000000000
-      internalID: -4062817238888957008
+      spriteID: 6ec19fc90fd662060800000000000000
+      internalID: 6928345956949236966
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11b2af7023b628046be7b6b7569dc163
+    spriteID: 5ce0fa4637c462c4aa51a8341e8b5637
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flowa Gem_0: 2409662209147966537
-      Flowa Gem_1: -4062817238888957008
+      Gold Heart_0: -3700062706568696823
+      Gold Heart_1: 6928345956949236966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

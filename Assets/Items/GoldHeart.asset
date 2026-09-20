@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e084b6573ad917140b606432ca3268de, type: 3}
-  m_Name: Thing
+  m_Name: GoldHeart
   m_EditorClassIdentifier: 
-  itemName: death
-  itemSprite: {fileID: 6417393693754540464, guid: 6f4b6a1289ccdb04c8e5c9a6bbe6dd25, type: 3}
-  itemHeal: 0
+  itemName: GoldHeart
+  itemSprite: {fileID: -3700062706568696823, guid: 82bb7fae23af3044a879d29e8fe68df5, type: 3}
+  itemHeal: 2
   itemAddMaxHPAmount: 2
-  itemDamage: 9999
-  itemOutlineSprite: {fileID: 7482667652216324306, guid: a1c93b0972874734b9fd7e5cd3a9d455, type: 3}
+  itemDamage: 0
+  speedBoostTime: 0
+  itemOutlineSprite: {fileID: 6928345956949236966, guid: 82bb7fae23af3044a879d29e8fe68df5, type: 3}

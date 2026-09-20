@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Heal
   itemSprite: {fileID: 2409662209147966537, guid: 3c7e894d4d93b564a92b8c1cf66c3661, type: 3}
-  itemHeal: 1
+  itemHeal: 2
   itemAddMaxHPAmount: 0
   itemDamage: 0
+  speedBoostTime: 0
+  itemOutlineSprite: {fileID: -4062817238888957008, guid: 3c7e894d4d93b564a92b8c1cf66c3661, type: 3}
