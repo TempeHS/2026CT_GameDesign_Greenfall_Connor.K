@@ -282,6 +282,7 @@ public class PlayerMovement : MonoBehaviour
         HazardTagApplier enemy = collision.gameObject.GetComponent<HazardTagApplier>();
         if (enemy != null)
         {
+            SoundEffectManager.Play("RobotAttack", true);
 
             playerHealth -= enemy.damage;
             if (enemy.flashRed)
@@ -315,7 +316,7 @@ public class PlayerMovement : MonoBehaviour
         HazardTagApplier enemy = other.gameObject.GetComponent<HazardTagApplier>();
         if (enemy != null)
         {
-
+            SoundEffectManager.Play("RobotAttack", true);
             playerHealth -= enemy.damage;
             if (enemy.flashRed)
             {

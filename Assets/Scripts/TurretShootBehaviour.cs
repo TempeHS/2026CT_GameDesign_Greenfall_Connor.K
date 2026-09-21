@@ -20,6 +20,8 @@ public class TurretShootBehaviour : MonoBehaviour
             GameObject clone = Instantiate(bulletObject, transform.position, transform.rotation * Quaternion.Euler(0, 0, 180f));
             BulletMovement cloneScript = clone.GetComponent<BulletMovement>();
             cloneScript.isActive = true;
+            cloneScript.chargeTime = shootcd/2;
+            cloneScript.maxChargeTime = shootcd / 2;
 
             shootcdReal = shootcd;
         }
