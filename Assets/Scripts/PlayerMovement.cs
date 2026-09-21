@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private float airTime = 0.0f;
     private float jumpAnimTime = 0.0f;
     private float dashDir = 1;
-    private Vector2 groundCheckSize = new Vector2(0.45f, 0.1f);
-    private Vector2 queueCheckSize = new Vector2(0.45f, 2f); 
+    private Vector2 groundCheckSize = new Vector2(0.4f, 0.1f);
+    private Vector2 queueCheckSize = new Vector2(0.4f, 2f); 
     public Vector2 respawnPos = new Vector2(0.0f, 0.0f);   
     public float dashCD = 0.0f;
     private float dashTime = 0.0f;
@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(IsGrounded());
         if(canInput){
             if(hasStopped){
                 hasStopped = false;

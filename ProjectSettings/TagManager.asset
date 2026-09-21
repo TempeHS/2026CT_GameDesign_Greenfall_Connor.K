@@ -11,6 +11,7 @@ TagManager:
   - KnockbackPlayer
   - Ground
   - Death
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX
