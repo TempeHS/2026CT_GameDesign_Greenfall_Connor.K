@@ -7,7 +7,7 @@
 | **Class / Course** |Year 10 Computer Technology |
 | **Repository** | https://github.com/TempeHS/2026CT_GameDesign_Greenfall_Connor.K |
 | **Unity Version** | 6000.0.58f1 |
-| **Document Version** | 0.07 |
+| **Document Version** | 0.08 |
 | **Date** | 27/08/26|
 
 ---
@@ -43,7 +43,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Condition | Description |
 |---|---|
 | Win |Escape the industrialised areas into nature |
-| Loss |Die |
+| Loss |Die and respawn at a checkpoint |
 
 ### 1.5 Platform & Build Settings
 | Setting | Detail |
@@ -55,7 +55,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ---
 
 ## 2. Video Walkthrough
-**no**
+
 ### 2.1 Full Gameplay Walkthrough
 
 <!--
@@ -89,11 +89,11 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 3.1 Core Mechanics
 | ID | Mechanic | Description | Implemented In (Script/Object) |
 |---|---|---|---|
-| M-1 | Pause Game | yeah | PlayerMovement |
-| M-2 | Checkpoint | | |
-| M-3 | Health| | |
-| M-4 | Interacting | | |
-| M-5 | Talking | | |
+| M-1 | Pause Game | Pauses the game and opens a pause menu with some settings | PlayerMovement |
+| M-2 | Checkpoint | allows the player to respawn at a set location | |
+| M-3 | Health| Allows the player to receive and deal damage | |
+| M-4 | Interacting | Allows the player to use core features of the game such as signs, pickups and checkpoints | |
+| M-5 | Item Pickups | the player can hold one item and use it whenever they want | |
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
@@ -103,21 +103,23 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Dash | LShift | Player rapidly moves in a horizontal direction, ignoring gravity |
 | Attack | Mouse Left Click | Allows player to hit and destroy enemies |
 | Interact | E | Allows the player to interact with checkpoints and text signs |
+| Use | Q | Uses the player's held item |
+| Fall | S | The player falls through one way platforms |
 
 ### 3.3 Physics & Collision
 | Feature | Description |
 |---|---|
-| Ground | The thing the player moves and jumps on |
+| One Way Platform | The player can jump on these platforms through the bottom, but cannot fall through the top unless the S key is pressed |
 | Spikes | Knocks the player back on contact |
 | Enemy Attack | The player is knoced away when they are hit |
 
 ### 3.4 Game Loop
 | Stage | Description |
 |---|---|
-| Start / Initialisation | |
-| Core Loop | |
-| Win / End State | |
-| Restart | |
+| Start / Initialisation | The player spawns in at the start of the game |
+| Core Loop | defeat enemies and go past obstacles to reach further right |
+| Win / End State | The player reaches the right-most edge of the map |
+| Restart | The game takes you to the main menu, where you can start the game over again |
 
 ### 3.5 Scoring & Progression
 | Element | Description |
@@ -134,11 +136,11 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-| Player Walk Particle | player walks and leaves dust | |
-| Player Dash Particle | whoosh | |
-| Tom pearls yummy soup | | |
+| Player Walk Particle | To make the player walk feel more physical | |
+| Player Dash Particle | emphasise the speed of the dash | |
+| Item Use Particle | shows that the item is used and what item | |
 | Enemy Gore | when the enemy dies, it leaves parts on the ground | |
-| Enemy Death Sparks | The enemy is a robot to it explodes into electricity | |
+| Enemy Death Sparks | The enemy is a robot so it explodes into electricity | |
 
 > Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
 
@@ -177,7 +179,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Feature | Description | Screenshot |
 |---|---|---|
-| | | |
+| Bullet Glow | Gives the cannon projectile a glowing effect | |
 | | | |
 | | | |
 
@@ -189,7 +191,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Shader / Material | Applied To | Description | Screenshot |
 |---|---|---|---|
-| | | | |
+| NoFriction| PlayerBody, PlayerOneWayCollider | Makes it so that there is no friction against the walls so the player does not stick| |
 | | | | |
 | | | | |
 
@@ -217,16 +219,16 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-| | | |
-| | | |
+| Game Music | | |
+| Main Menu Music - House | Main Menu Scene | Yu Lou |
 
 ### 5.2 Sound Effects
 | Sound Effect | Trigger | Source |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
+| Player Attack | | |
+| Player Heal | | |
+| Player Hit | | |
+| Player Death Jingle | | |
 
 ### 5.3 Audio Implementation
 | Feature | Description |
@@ -242,9 +244,9 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 6.1 HUD Elements
 | Element | Purpose | Screenshot |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Player Health | | |
+| Player Dash Bar | | |
+| Player Held Item | | |
 
 > Add screenshot images using: `![HUD Element](./docs/screenshots/hud_name.png)`
 
@@ -265,8 +267,8 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 7.1 Scene List
 | Scene Name | Purpose | Description |
 |---|---|---|
-| | | |
-| | | |
+|Main Menu | | |
+| Game Scene | | |
 | | | |
 | | | |
 
@@ -283,7 +285,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Feature | Description |
 |---|---|
 | Scene Loading Method | |
-| Persistent Data Between Scenes | |
+| Persistent Data Between Scenes | There is no persistent data between scenes as the game is meant to be played in one sitting |
 | Scene Transition Effects | |
 
 ---
@@ -302,7 +304,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 8.2 Key Algorithms / Logic
 | Feature | Script | Description |
 |---|---|---|
-| | | |
+| IInteractable | | |
 | | | |
 | | | |
 
@@ -357,6 +359,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | | | | | | |
 
 ### 10.4 Unity Packages & Plugins
+No External Packages or plugins were used in the creation of Greenfall
 | Package Name | Version | Source | Licence | URL | Purpose |
 |---|---|---|---|---|---|
 | | | | | | |
