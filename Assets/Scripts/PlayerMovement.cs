@@ -53,17 +53,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Awake()
     {
+        
         dashParticle = dash.emission;
         boostParticle = boost.emission;
         walkParticle = walk.emission;
         playerDeathScreen.SetActive(false);
-
         playerMaxHealth = 8.0f;
         playerHealth = 8.0f;
     }
     void Update()
     {
-        Debug.Log(IsGrounded());
+        
         if(canInput){
             if(hasStopped){
                 hasStopped = false;

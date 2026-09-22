@@ -116,9 +116,12 @@ public class BulletMovement : MonoBehaviour
 
     public void Die()
     {
-        ballDeathCd = 0.3f;
-        rb.linearVelocity = Vector2.zero;
-        animator.SetTrigger("BallDeath");
-        hasDied = true;
+        if (!hasDied)
+        {
+            ballDeathCd = 0.3f;
+            rb.linearVelocity = Vector2.zero;
+            animator.SetTrigger("BallDeath");
+            hasDied = true;
+        }
     }
 }

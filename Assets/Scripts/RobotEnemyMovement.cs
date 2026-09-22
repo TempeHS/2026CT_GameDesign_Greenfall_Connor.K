@@ -32,6 +32,7 @@ public class RobotEnemyMovement : MonoBehaviour
     public bool isAlive = true;
     private bool hasPlayedSound = false;
     private Vector2 itemSpawnPos;
+    private float iFrames;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -72,6 +73,7 @@ public class RobotEnemyMovement : MonoBehaviour
         }
         atkChargeTime -= Time.deltaTime;
         enemyKBTime -= Time.deltaTime;
+        iFrames -= Time.deltaTime;
         if (atkChargeTime < 0 && enemyKBTime<=0.0f)
         {
             movement.x = speed * curentDir;
@@ -218,24 +220,27 @@ public class RobotEnemyMovement : MonoBehaviour
         PlayerDamageTags player = other.gameObject.GetComponent<PlayerDamageTags>();
         if (player != null)
         {
+            if (iFrames <= 0.0f)
+            {
+                enemyHealth -= player.damage;
+                if (player.flashRed)
+                {
+                    DamageSparks.transform.position = rb.transform.position;
+                    DamageSparks.Play();
+                    animator.SetTrigger("flashRed");
+                }
 
-            enemyHealth -= player.damage;
-            if (player.flashRed)
-            {
-                DamageSparks.transform.position = rb.transform.position;
-                DamageSparks.Play();
-                animator.SetTrigger("flashRed");
-            }
-            
-            if (player.kbAmount > 0)
-            {
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(pushDirection * player.kbAmount *1.5f, ForceMode2D.Impulse);
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y+2);
-            }
-            if (player.willStun)
-            {
-                enemyKBTime = 0.3f;
+                if (player.kbAmount > 0)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.AddForce(pushDirection * player.kbAmount * 1.5f, ForceMode2D.Impulse);
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y + 2);
+                }
+                if (player.willStun)
+                {
+                    enemyKBTime = 0.3f;
+                }
+                iFrames = 0.5f;
             }
 
         }

@@ -14,13 +14,16 @@ public class MusicManager : MonoBehaviour
         {
             instance = this;
             audioSource = GetComponent<AudioSource>();
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        SetVolume(musicSlider.value);
+        if (musicSlider != null)
+        {
+            SetVolume(musicSlider.value);
+        }
     }
     void Start()
     {
@@ -52,5 +55,9 @@ public class MusicManager : MonoBehaviour
     public static void PauseBGM()
     {
         instance.audioSource.Pause();
+    }
+    public static void StopBGM()
+    {
+        instance.audioSource.Stop();
     }
 }

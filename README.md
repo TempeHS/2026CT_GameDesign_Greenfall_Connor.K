@@ -348,9 +348,9 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 10.2 Audio Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| null| .mp3 | Yu Lou | none provided | none provided | Main Menu Music |
+| bleep028| .ogg | dmochas |  Creative Commons Attribution 4.0 International License  | https://dmochas-assets.itch.io/dmochas-bleeps-pack | Sign Interactable Sounds |
+| Multimedia - Greenfall OST |.wav| Multimedia Partner | none provided | none provided | Main Level Soundtrack|
 
 ### 10.3 Scripts & Code Snippets
 | Script / Snippet | Source | Licence | URL | Used For | Changes Made |
