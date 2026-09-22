@@ -7,11 +7,11 @@ public class PlayerOneWayPlatform : MonoBehaviour
     private List<GameObject> currentOneWayPlatforms = new List<GameObject>();
     private List<GameObject> oldCurrentOneWayPlatforms = new List<GameObject>();
     private GameObject currentOneWayPlatform;
-    [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField] private CapsuleCollider2D playerCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerCollider = GetComponent<BoxCollider2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame

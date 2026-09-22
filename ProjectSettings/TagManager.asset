@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Death
   - OneWayPlatform
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - 'Interactable '
   - Death
   - Item
-  - 
+  - RobotEnemy
   - 
   - 
   - 

@@ -150,7 +150,7 @@ public class RobotEnemyMovement : MonoBehaviour
                 hasPlayedSound = false;
 
             }
-            stayOnLedges = false;
+            //stayOnLedges = false;
 
         }
         else

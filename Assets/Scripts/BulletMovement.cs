@@ -16,13 +16,15 @@ public class BulletMovement : MonoBehaviour
     private Vector2 size = new Vector2(0f, 0f);
     private Vector2 maxSize = new Vector2(1.5f, 1.5f);
     [SerializeField] private Animator animator;
+    private HazardTagApplier applier;
 
     void Start()
     {
-        
 
+        applier = GetComponent<HazardTagApplier>();
         rb = GetComponent<Rigidbody2D>();
-        
+        transform.localScale = new Vector3(0, 0, 1f);
+
 
 
     }
@@ -65,7 +67,14 @@ public class BulletMovement : MonoBehaviour
             Destroy(gameObject);
         }else if(ballDeathCd <= 2 && hasDied)
         {
-            GetComponent<HazardTagApplier>().enabled = false;
+            applier = GetComponent<HazardTagApplier>();
+
+            
+            if (applier != null)
+            {
+                Destroy(applier);
+            }
+            //GetComponent<HazardTagApplier>().enabled = false;
         }
         if (lifetime<= 0)
         {
@@ -73,10 +82,11 @@ public class BulletMovement : MonoBehaviour
             
             if (!hasDied) 
             {
-                ballDeathCd = 0.3f;
-                rb.linearVelocity = Vector2.zero;
-                animator.SetTrigger("BallDeath");
-                hasDied = true;
+                Die();
+                //ballDeathCd = 0.3f;
+                //rb.linearVelocity = Vector2.zero;
+                //animator.SetTrigger("BallDeath");
+                //hasDied = true;
             }
             
             
@@ -91,15 +101,24 @@ public class BulletMovement : MonoBehaviour
             {
                 if (!hasDied)
                 {
-                    ballDeathCd = 0.3f;
-                    rb.linearVelocity = Vector2.zero;
-                    animator.SetTrigger("BallDeath");
-                    hasDied = true;
+                    Die();
+                    //ballDeathCd = 0.3f;
+                    //rb.linearVelocity = Vector2.zero;
+                    //animator.SetTrigger("BallDeath");
+                    //hasDied = true;
                 }
             }
         
 
 
 
+    }
+
+    public void Die()
+    {
+        ballDeathCd = 0.3f;
+        rb.linearVelocity = Vector2.zero;
+        animator.SetTrigger("BallDeath");
+        hasDied = true;
     }
 }

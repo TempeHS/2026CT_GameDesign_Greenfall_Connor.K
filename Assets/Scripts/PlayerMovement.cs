@@ -283,26 +283,28 @@ public class PlayerMovement : MonoBehaviour
         HazardTagApplier enemy = collision.gameObject.GetComponent<HazardTagApplier>();
         if (enemy != null)
         {
-            SoundEffectManager.Play("RobotAttack", true);
+            if (iFrames <= 0)
+            {
+                SoundEffectManager.Play("RobotAttack", true);
 
-            playerHealth -= enemy.damage;
-            if (enemy.flashRed)
-            {
-                animator.SetTrigger("flashRed");
-            }
-            
-            iFrames = 100;
-            if (enemy.kbAmount > 0)
-            {
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(pushDirection * enemy.kbAmount*1.5f, ForceMode2D.Impulse);
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x , rb.linearVelocity.y+2);
-            }
-            if (enemy.willStun)
-            {
-                playerKBTime = 0.2f;
-            }
+                playerHealth -= enemy.damage;
+                if (enemy.flashRed)
+                {
+                    animator.SetTrigger("flashRed");
+                }
 
+                iFrames = 100;
+                if (enemy.kbAmount > 0)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.AddForce(pushDirection * enemy.kbAmount * 1.5f, ForceMode2D.Impulse);
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y + 2);
+                }
+                if (enemy.willStun)
+                {
+                    playerKBTime = 0.2f;
+                }
+            }
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -311,30 +313,39 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHealth -= 100;
         }
+        if (other.CompareTag("Bullet"))
+        {
+            BulletMovement bulletMovement = other.gameObject.GetComponent<BulletMovement>();
+            bulletMovement.Die();
+        }
         Vector2 contactPoint = other.ClosestPoint(transform.position);
         Vector2 pushDirection = ((Vector2)transform.position - contactPoint);
         pushDirection.x = GetDirection(contactPoint);
         HazardTagApplier enemy = other.gameObject.GetComponent<HazardTagApplier>();
         if (enemy != null)
         {
-            SoundEffectManager.Play("RobotAttack", true);
-            playerHealth -= enemy.damage;
-            if (enemy.flashRed)
+            if (iFrames <= 0)
             {
-                animator.SetTrigger("flashRed");
+                SoundEffectManager.Play("RobotAttack", true);
+                playerHealth -= enemy.damage;
+                if (enemy.flashRed)
+                {
+                    animator.SetTrigger("flashRed");
+                }
+
+                iFrames = 100;
+                if (enemy.kbAmount > 0)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.AddForce(pushDirection * enemy.kbAmount * 1.5f, ForceMode2D.Impulse);
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y + 2);
+                }
+                if (enemy.willStun)
+                {
+                    playerKBTime = 0.3f;
+                }
             }
             
-            iFrames = 100;
-            if (enemy.kbAmount > 0)
-            {
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(pushDirection * enemy.kbAmount *1.5f, ForceMode2D.Impulse);
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y+2);
-            }
-            if (enemy.willStun)
-            {
-                playerKBTime = 0.3f;
-            }
 
         }
     }
