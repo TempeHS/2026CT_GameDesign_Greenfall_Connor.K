@@ -107,7 +107,7 @@ public class RobotEnemyMovement : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Ground"))
+        if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("OneWayPlatform"))
         {
             isGrounded=true;
 

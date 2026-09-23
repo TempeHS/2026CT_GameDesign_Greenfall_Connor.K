@@ -124,23 +124,23 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 3.5 Scoring & Progression
 | Element | Description |
 |---|---|
-| Scoring System | |
-| Difficulty Progression | |
-| Unlockables / Levels | |
+| Scoring System | The player gains better stats while they progress |
+| Difficulty Progression | the level has more obstacles and enemies do more damage |
+| Unlockables / Levels | yeah |
 
 ---
 
 ## 4. Visual Features
 
 ### 4.1 Particle Effects
-
+238 x 190 res
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-| Player Walk Particle | To make the player walk feel more physical | |
-| Player Dash Particle | emphasise the speed of the dash | |
-| Item Use Particle | shows that the item is used and what item | |
-| Enemy Gore | when the enemy dies, it leaves parts on the ground | |
-| Enemy Death Sparks | The enemy is a robot so it explodes into electricity | |
+| Player Walk Particle | To make the player walk feel more physical | ![Player Walk](./docs/screenshots/PlayerWalkParticle.png)|
+| Player Dash Particle | emphasise the speed of the dash |![Player Dash](./docs/screenshots/PlayerDashParticle.png) |
+| Item Use Particle | shows that the item is used and what item |![Player Item Use](./docs/screenshots/ItemUseParticle.png) |
+| Enemy Gore | when the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/screenshots/EnemyDeathGore.png)|
+| Enemy Death Sparks | The enemy is a robot so it explodes into electricity(in the same screenshot) | ![Enemy Death](./docs/screenshots/EnemyDeathGore.png) |
 
 > Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
 
@@ -150,9 +150,8 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Cut Scene | Trigger | Description | Screenshot / Still |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| Game Endng | WinBox | The player is transported to a green forest with a new parallax and then the final scene is faded in along with the home button | |
+
 
 > Add screenshot images using: `![Cut Scene Name](./docs/screenshots/cutscene_name.png)`
 
@@ -162,7 +161,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-| Player walk | | | |
+| Player walk |  |  | |
 | Player Attack | | | |
 | Player Dash | | | |
 | Player Jump | | | |
@@ -219,7 +218,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-| Game Music | | |
+| Multimedia - Greenfall OST | Main Game Scene| Multimedia Partner |
 | Main Menu Music - House | Main Menu Scene | Yu Lou |
 
 ### 5.2 Sound Effects
@@ -256,7 +255,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Main Menu | | |
 | Pause Menu | | |
 | Game Over Screen | | |
-| | | |
+|  | | |
 
 > Add screenshot images using: `![Menu Name](./docs/screenshots/menu_name.png)`
 
