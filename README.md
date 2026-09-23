@@ -142,7 +142,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Enemy Gore | when the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png)|
 | Enemy Death Sparks | The enemy is a robot so it explodes into electricity(in the same screenshot) | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png) |
 
-> Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
+
 
 ---
 
@@ -153,7 +153,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Game Endng | WinBox | The player is transported to a green forest with a new parallax and then the final scene is faded in along with the home button |![Final Cutscene](./docs/Screenshots/EndCutscene.png) |
 
 
-> Add screenshot images using: `![Cut Scene Name](./docs/screenshots/cutscene_name.png)`
+
 
 ---
 
@@ -161,13 +161,12 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-| Player walk | PlayerAnim | The player walks in a horizontal direction  | |
-| Player Attack | PlayerAnim | The player quickly attacks in front of them | |
+| Player Walk | PlayerAnim | The player walks in a horizontal direction  | ![Player Walk Anim](./docs/gifs/PlayerWalkAnim.gif) |
 | Player Dash | PlayerAnim | The player lunges forwards and then stops | |
 | Enemy Walk | RobotEnemyAnim | The wheel of the robot rolls, while the body bobs up and down | |
 | Enemy Attack | RobotEnemyAnim | The robot becomes angry and swings its weapon at the player| |
 | Swaying Grass | Animated Rule Tile(Main Tile Palette) | The grass sways randomly on one direction | |
-| Front Background Parallax | ParallaxFront GameObject | Smoke flies from smokestacks in the background | |
+| Front-Most Background Parallax | ParallaxFront GameObject | Smoke flies from smokestacks in the background | |
 
 > Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
 
