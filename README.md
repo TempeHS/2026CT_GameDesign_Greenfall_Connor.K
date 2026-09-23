@@ -93,7 +93,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | M-2 | Checkpoint | Allows the player to respawn at a set location | Checkpoint.cs/IInteractable.cs|
 | M-3 | Health| Allows the player to receive and deal damage | PlayerHealthManager.cs/PlayerMovement.cs |
 | M-4 | Interacting | Allows the player to use core features of the game such as signs, pickups and checkpoints | IInteractable.cs |
-| M-5 | Item Pickups | the player can hold one item and use it whenever they want | HeldItemManager.cs/IInteractable.cs |
+| M-5 | Item Pickups | The player can hold one item and use it whenever they want | HeldItemManager.cs/IInteractable.cs |
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
@@ -117,7 +117,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Stage | Description |
 |---|---|
 | Start / Initialisation | The player spawns in at the start of the game, on the leftmost side |
-| Core Loop | defeat enemies and go past obstacles to reach further right with checkpoints to save progress |
+| Core Loop | Defeat enemies and go past obstacles to reach further right with checkpoints to save progress |
 | Win / End State | The player reaches the right-most edge of the map and escapes the industrial wasteland |
 | Restart | The game takes you to the main menu, where you can start the game over again from the beginning |
 
@@ -125,7 +125,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Element | Description |
 |---|---|
 | Scoring System | The player gains better stats while they progress, such as increased maximum health |
-| Difficulty Progression | the level has more obstacles and enemies do more damage |
+| Difficulty Progression | The level has more obstacles and enemies do more damage |
 | Unlockables / Levels | There is only one large level in Greenfall, where the player must escape  |
 
 ---
@@ -137,9 +137,9 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
 | Player Walk Particle | To make the player walk feel more physical | ![Player Walk](./docs/Screenshots/PlayerWalkParticle.png)|
-| Player Dash Particle | emphasise the speed of the dash |![Player Dash](./docs/Screenshots/PlayerDashParticle.png) |
-| Item Use Particle | shows that the item is used and what item |![Player Item Use](./docs/Screenshots/ItemUseParticle.png) |
-| Enemy Gore | when the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png)|
+| Player Dash Particle | Emphasise the speed of the dash |![Player Dash](./docs/Screenshots/PlayerDashParticle.png) |
+| Item Use Particle | Shows that the item is used and what item |![Player Item Use](./docs/Screenshots/ItemUseParticle.png) |
+| Enemy Gore | When the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png)|
 | Enemy Death Sparks | The enemy is a robot so it explodes into electricity(in the same screenshot) | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png) |
 
 
@@ -175,7 +175,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Feature | Description | Screenshot |
 |---|---|---|
-| Bullet Glow | Gives the cannon projectile a glowing effect | |
+| Bullet Glow | Gives the cannon projectile a glowing/bloom effect |![Glowing Effect](./docs/Screenshots/Glow.png) |
 
 
 > Add screenshot images using: `![Feature Name](./docs/screenshots/lighting_name.png)`
@@ -186,8 +186,8 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Shader / Material | Applied To | Description | Screenshot |
 |---|---|---|---|
-| NoFriction| PlayerBody, PlayerOneWayCollider | Makes it so that there is no friction against the walls so the player does not stick| |
-| Glow | BallProjectileTemplate | Makes the game object glow brightly | |
+| NoFriction| PlayerBody, PlayerOneWayCollider | Makes it so that there is no friction against the walls so the player does not stick (how do I provide an image of this)|![NoFriction](./docs/Screenshots/NoFriction.png) |
+
 
 
 > Add screenshot images using: `![Shader Name](./docs/screenshots/shader_name.png)`
@@ -203,7 +203,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Description | Screenshot |
 |---|---|
-| | |
+| A part of the main level consisting of a multi leveled building which the player traverses using one way platforms | ![Additional Screenshot 1](./docs/Screenshots/Additional1.png) |
 | | |
 | | |
 
@@ -224,14 +224,14 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Player Heal | Healing item use | Tristan |
 | Player Hit | Player is hit by spike, robot, or cannon | Tristan |
 | Player Death Jingle | Player dies | Tristan |
-| Player Death Jingle | Player dies | dmochas |
+| bleep028 | Sign text sound | dmochas |
 
 ### 5.3 Audio Implementation
 | Feature | Description |
 |---|---|
-| Audio Mixer / Groups | |
-| Spatial / 3D Audio | |
-| Dynamic Audio | |
+| Audio Mixer / Groups | All of the audio in my game was put in one big sound effect manager |
+| Spatial / 3D Audio | No spatial/3D audio was used|
+| Dynamic Audio | No dynamic audio was used |
 
 ---
 
@@ -252,7 +252,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Main Menu | | |
 | Pause Menu | | |
 | Game Over Screen | | |
-|  | | |
+
 
 > Add screenshot images using: `![Menu Name](./docs/screenshots/menu_name.png)`
 
