@@ -246,17 +246,15 @@ No additional screenshots are needed, as basically all of the game is shown in
 | Player Dash Bar | Tells the player if their dash is on cooldown or not |![Dash Bar](./docs/Screenshots/PlayerDash.png) |
 | Player Held Item | tells the player what item they are holding |![Held Item Slot](./docs/Screenshots/PlayerHeldItem.png) |
 
-> Add screenshot images using: `![HUD Element](./docs/screenshots/hud_name.png)`
+
 
 ### 6.2 Menus
 | Menu | Purpose | Screenshot |
 |---|---|---|
-| Main Menu | This is where the game is first launched and the player can begin to play the game, or exit the game | |
-| Pause Menu | Pauses the game, as well as having some options such as volume sliders, and restart and return to menu buttons | |
-| Game Over Screen | Tells the player that they have died, and allows them to respawn through the return button | |
+| Main Menu | This is where the game is first launched and the player can begin to play or exit the game | ![Main Menu](./docs/Screenshots/MainMenu.png)|
+| Pause Menu | Pauses the game, as well as having some options such as volume sliders, and restart and return to menu buttons |![Pause Menu](./docs/Screenshots/PauseMenu.png) |
+| Game Over Screen | Tells the player that they have died, and allows them to respawn through the return button |![Game Over Screen](./docs/Screenshots/GameOver.png) |
 
-
-> Add screenshot images using: `![Menu Name](./docs/screenshots/menu_name.png)`
 
 ---
 
@@ -265,18 +263,18 @@ No additional screenshots are needed, as basically all of the game is shown in
 ### 7.1 Scene List
 | Scene Name | Purpose | Description |
 |---|---|---|
-|Main Menu | | |
-| Game Scene | | |
+|Main Menu | Where the player can start the game or exit the application | |
+| Game Scene | Where the actual game takes place | |
 
 
 ### 7.2 Level / Environment Screenshots
 | Level / Area | Description | Screenshot |
 |---|---|---|
-| A part of the main level consisting of a multi leveled building which the player traverses using one way platforms | ![Main Level Building](./docs/Screenshots/Additional1.png) |
-| | | |
-| | | |
+|Building| A part of the main level consisting of a multi leveled building which the player traverses using one way platforms | ![Main Level Building](./docs/Screenshots/Additional1.png) |
+|Cannon Warehouse| Many cannons line the roof, forcing the player to take cover periodically | ![Cannon Building](./docs/Screenshots/Additional2.png) |
+|Spawn area| The player spawns near here, where there are signs that give a basic tutorial on the game| ![Start Area](./docs/Screenshots/Additional3.png) |
 
-> Add screenshot images using: `![Level Name](./docs/screenshots/level_name.png)`
+
 
 ### 7.3 Scene Management
 | Feature | Description |
