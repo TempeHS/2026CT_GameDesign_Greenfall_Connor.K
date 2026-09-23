@@ -136,11 +136,11 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 238 x 190 res
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-| Player Walk Particle | To make the player walk feel more physical | ![Player Walk](./docs/screenshots/PlayerWalkParticle.png)|
-| Player Dash Particle | emphasise the speed of the dash |![Player Dash](./docs/screenshots/PlayerDashParticle.png) |
-| Item Use Particle | shows that the item is used and what item |![Player Item Use](./docs/screenshots/ItemUseParticle.png) |
-| Enemy Gore | when the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/screenshots/EnemyDeathGore.png)|
-| Enemy Death Sparks | The enemy is a robot so it explodes into electricity(in the same screenshot) | ![Enemy Death](./docs/screenshots/EnemyDeathGore.png) |
+| Player Walk Particle | To make the player walk feel more physical | ![Player Walk](./docs/Screenshots/PlayerWalkParticle.png)|
+| Player Dash Particle | emphasise the speed of the dash |![Player Dash](./docs/Screenshots/PlayerDashParticle.png) |
+| Item Use Particle | shows that the item is used and what item |![Player Item Use](./docs/Screenshots/ItemUseParticle.png) |
+| Enemy Gore | when the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png)|
+| Enemy Death Sparks | The enemy is a robot so it explodes into electricity(in the same screenshot) | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png) |
 
 > Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
 
