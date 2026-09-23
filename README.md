@@ -150,7 +150,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Cut Scene | Trigger | Description | Screenshot / Still |
 |---|---|---|---|
-| Game Endng | WinBox | The player is transported to a green forest with a new parallax and then the final scene is faded in along with the home button | |
+| Game Endng | WinBox | The player is transported to a green forest with a new parallax and then the final scene is faded in along with the home button |![Final Cutscene](./docs/screenshots/EndCutscene.png) |
 
 
 > Add screenshot images using: `![Cut Scene Name](./docs/screenshots/cutscene_name.png)`
