@@ -133,7 +133,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ## 4. Visual Features
 
 ### 4.1 Particle Effects
-238 x 190 res
+
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
 | Player Walk Particle | To make the player walk feel more physical | ![Player Walk](./docs/Screenshots/PlayerWalkParticle.png)|
@@ -218,7 +218,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-| Multimedia - Greenfall OST | Main Game Scene| Multimedia Partner |
+| Multimedia - Greenfall OST | Main Game Scene| Tristan |
 | Main Menu Music - House | Main Menu Scene | Yu Lou |
 
 ### 5.2 Sound Effects
@@ -268,8 +268,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 |---|---|---|
 |Main Menu | | |
 | Game Scene | | |
-| | | |
-| | | |
+
 
 ### 7.2 Level / Environment Screenshots
 | Level / Area | Description | Screenshot |
@@ -349,7 +348,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 |---|---|---|---|---|---|
 | null| .mp3 | Yu Lou | none provided | none provided | Main Menu Music |
 | bleep028| .ogg | dmochas |  Creative Commons Attribution 4.0 International License  | https://dmochas-assets.itch.io/dmochas-bleeps-pack | Sign Interactable Sounds |
-| Multimedia - Greenfall OST |.wav| Multimedia Partner | none provided | none provided | Main Level Soundtrack|
+| Multimedia - Greenfall OST |.wav| Tristan | none provided | none provided | Main Level Soundtrack|
 
 ### 10.3 Scripts & Code Snippets
 | Script / Snippet | Source | Licence | URL | Used For | Changes Made |
