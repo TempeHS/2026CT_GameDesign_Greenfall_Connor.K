@@ -7,7 +7,7 @@
 | **Class / Course** |Year 10 Computer Technology |
 | **Repository** | https://github.com/TempeHS/2026CT_GameDesign_Greenfall_Connor.K |
 | **Unity Version** | 6000.0.58f1 |
-| **Document Version** | 0.08 |
+| **Document Version** | 1.00 |
 | **Date** | 27/08/26|
 
 ---
@@ -263,8 +263,8 @@ No additional screenshots are needed, as basically all of the game is shown in
 ### 7.1 Scene List
 | Scene Name | Purpose | Description |
 |---|---|---|
-|Main Menu | Where the player can start the game or exit the application | |
-| Game Scene | Where the actual game takes place | |
+|Main Menu | Where the player can start the game or exit the application | There is a dark background with grey buttons that lead to closing the game or starting the main level |
+| Game Scene | Where the actual game takes place | This is the main level, where most of the gameplay takes place |
 
 
 ### 7.2 Level / Environment Screenshots
@@ -289,25 +289,25 @@ No additional screenshots are needed, as basically all of the game is shown in
 ### 8.1 Script Summary
 | Script Name | Attached To | Responsibility |
 |---|---|---|
-| PlayerMovement | PlayerBody | Controls most physics/collisions based interactions, as well as handling damage and player animation and sound triggers |
-| | | |
-| | | |
-| | | |
-| | | |
+| PlayerMovement | PlayerBody GameObject | Controls most physics/collisions based interactions, as well as handling damage and player animation and sound triggers |
+| RobotEnemyMovement | All RobotEnemyBody GameObjects | Makes the robot enemies able to move, turn, see ledges, and attack the player |
+| SoundEffectManager | SoundEffectManager GameObject | Makes a script that other scripts can call to in order to play sound at the right time, and can change the volume or randomise the pitch of sounds effects |
+| NPC | All NPC Game Objects | Makes the screen play text based on a data asset that is given to this script, as well as controlling the speed of the text |
+| Interaction Detector | Interaction Detector Game Object | Finds the nearest interactable within range and calls to their onUse functions, and outlines them |
 
 ### 8.2 Key Algorithms / Logic
 | Feature | Script | Description |
 |---|---|---|
-| IInteractable | | |
-| | | |
-| | | |
+| Interactables | IInteractable.cs | Makes foundation for all interactable objects in my game including checkpoints, signs, and pickups |
+| Damage Applier | HazardTagApplier | makes the player be able to take varying amounts of damage and knockback from different sources|
+| Held Item | HeldItemManager | Transfers the data of the held item with items on the ground, and uses the item|
 
 ### 8.3 Design Patterns Used
 | Pattern | Where Applied | Justification |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Singleton pattern | SoundEffectManager | To keep the sound effects organised and easy to access |
+
+No other design patterns were used
 
 ---
 
@@ -317,14 +317,13 @@ No additional screenshots are needed, as basically all of the game is shown in
 
 | # | Title | Author / Creator | URL / Source | What You Used It For | What You Changed / Adapted |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
-| 8 | | | | | |
+| 1 | How To Make 2D One-Way Platforms In Unity | bendux | https://www.youtube.com/watch?v=7rCUt6mqqE8 | One Way Platforms | I made it so that all one way platforms you collide with will have their collision removed on drop |
+| 2 | Add a Sound Effect Manager to Your Game - 2D Platformer Unity #26 | Game Code Library | https://www.youtube.com/watch?v=rAX_r0yBwzQ | Sound Effect Manager | The tutorial worked fine, and I had no changes I had to make |
+| 3 | Add NPC and Dialogue System to your Game - Top Down Unity 2D #19 | Game Code Library | https://www.youtube.com/watch?v=eSH9mzcMRqw | Npc Dialogue | The tutorial worked well, but I had to adapt the scripts to sidescrolling instead of top down |
+| 4 | Add an Interaction System to your Game - Top Down Unity 2D #16 | Game Code Library | https://www.youtube.com/watch?v=MPP9GLp44Pc | Interactables | I made the interactables themselves have an outline, as well as change the interact targeting |
+| 5 | How to Create 2D Enemy Movement in Unity  | Wild Cockatiel Games | https://www.youtube.com/watch?v=7mkD9K2nwDM | Enemy Movement | Made the enemy have an attack as well as turn if the player gets too close |
+| 6 | How to Create Tilemaps in Unity | Wild Cockatiel Games | https://www.youtube.com/watch?v=5s_gcWef4pY | Tilemap | Made animation tiles with many different tilemap layers |
+| 7 | 2D Player Movement in Unity | bendux | https://www.youtube.com/watch?v=5S6H3zMoSzs | Player Movement | Used this script as a basis for the rest of the player physics scripts |
 
 ---
 
@@ -347,23 +346,25 @@ No additional screenshots are needed, as basically all of the game is shown in
 | Multimedia - Greenfall OST |.wav| Tristan | none provided | none provided | Main Level Soundtrack|
 
 ### 10.3 Scripts & Code Snippets
-| Script / Snippet | Source | Licence | URL | Used For | Changes Made |
+No External scripts were used in the creation of Greenfall
+<!--| Script / Snippet | Source | Licence | URL | Used For | Changes Made |
 |---|---|---|---|---|---|
 | | | | | | |
 | | | | | | |
-
+-->
 ### 10.4 Unity Packages & Plugins
-No External Packages or plugins were used in the creation of Greenfall
+No External Packages or plugins were used in the creation of Greenfall 
+<!--No External Packages or plugins were used in the creation of Greenfall 
 | Package Name | Version | Source | Licence | URL | Purpose |
 |---|---|---|---|---|---|
 | | | | | | |
 | | | | | | |
 | | | | | | |
-
+-->
 ### 10.5 Fonts
 | Font Name | Creator / Source | Licence | URL |
 |---|---|---|---|
-| Cariopixel | | | |
+| Cariopixel | GGBotNet | ![Font License](./docs/licences/CariopixelLicense.txt) | https://www.1001fonts.com/cairopixel-font.html |
 
 
 ---
@@ -372,11 +373,11 @@ No External Packages or plugins were used in the creation of Greenfall
 
 | # | Challenge Encountered | How It Was Solved |
 |---|---|---|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | Player Health bar breaking | Made the health bar refresh whenever the max health changed |
+| 2 | Enemy Not turning correctly | Found out that the raycast also viewed the robot object that is was coming from as an obstacle, which made the robot infinitely turn, and made the robot ignore itself |
+| 3 | Player could not fall if standing in between two one way platforms | Made a list of one way platforms the player was standing on, and removed their collisions from there|
+| 4 | Cutscenes overlapped over each other | Made the cutscenes into Ienumerators, which resolved the issue |
+| 5 | Cannon projectile sometimes hit the player twice | Made the projectile destroy itself on contact with the player which makes sure that it won't hit twice  |
 
 ---
 
@@ -499,9 +500,9 @@ No External Packages or plugins were used in the creation of Greenfall
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
 | `main` | Stable release | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
+| `feature/tilemap` | | | | |
+| `feature/main-and-pause-menu` | | | | |
+| `feature/damage-system` | | | | |
 
 ---
 
