@@ -78,10 +78,9 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Clip | Description | Link |
 |---|---|---|
-| Cannons Firing | | |
-| Robot Enemy Behavior | | |
-| Item Use | | |
-| Main Menu Parallax | | |
+| Cannons Firing | The cannons can be set to fire at different intervals, and the energy ball charges up accordingly | https://github.com/user-attachments/assets/862b1058-4ff2-4586-b8f4-26e5e2e3cb6c|
+| Item Use | When interacted with, your held item will swap with the item on the ground. Both items will keep their values even after bring swapped |https://github.com/user-attachments/assets/604458a6-641c-442d-b7ce-6c3d34a62275 |
+| Main Menu Parallax | Objects on the main menu will change position based on the location of your mouse, with varying amounts for each object to create a 3-dimensional effect |https://github.com/user-attachments/assets/a4e5e869-c138-4247-bb05-bfcfd42a1393|
 
 ---
 
