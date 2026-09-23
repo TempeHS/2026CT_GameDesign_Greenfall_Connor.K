@@ -78,9 +78,10 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Clip | Description | Link |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Cannons Firing | | |
+| Robot Enemy Behavior | | |
+| Item Use | | |
+| Main Menu Parallax | | |
 
 ---
 
@@ -89,44 +90,44 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 3.1 Core Mechanics
 | ID | Mechanic | Description | Implemented In (Script/Object) |
 |---|---|---|---|
-| M-1 | Pause Game | Pauses the game and opens a pause menu with some settings | PlayerMovement |
-| M-2 | Checkpoint | allows the player to respawn at a set location | |
-| M-3 | Health| Allows the player to receive and deal damage | |
-| M-4 | Interacting | Allows the player to use core features of the game such as signs, pickups and checkpoints | |
-| M-5 | Item Pickups | the player can hold one item and use it whenever they want | |
+| M-1 | Pause Game | Pauses the game and opens a pause menu with some settings | PlayerMovement.cs |
+| M-2 | Checkpoint | Allows the player to respawn at a set location | Checkpoint.cs/IInteractable.cs|
+| M-3 | Health| Allows the player to receive and deal damage | PlayerHealthManager.cs/PlayerMovement.cs |
+| M-4 | Interacting | Allows the player to use core features of the game such as signs, pickups and checkpoints | IInteractable.cs |
+| M-5 | Item Pickups | the player can hold one item and use it whenever they want | HeldItemManager.cs/IInteractable.cs |
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
 |---|---|---|
 | Horizontal Movement | A/D | Allows the player to move sideways |
-| Jump | Space | Allows the player to jump |
+| Jump | Space | Allows the player to jump upwards |
 | Dash | LShift | Player rapidly moves in a horizontal direction, ignoring gravity |
 | Attack | Mouse Left Click | Allows player to hit and destroy enemies |
-| Interact | E | Allows the player to interact with checkpoints and text signs |
+| Interact | E | Allows the player to interact with checkpoints, item pickups, and text signs |
 | Use | Q | Uses the player's held item |
-| Fall | S | The player falls through one way platforms |
+| Fall | S | Lets the player falls through one way platforms |
 
 ### 3.3 Physics & Collision
 | Feature | Description |
 |---|---|
 | One Way Platform | The player can jump on these platforms through the bottom, but cannot fall through the top unless the S key is pressed |
-| Spikes | Knocks the player back on contact |
-| Enemy Attack | The player is knoced away when they are hit |
+| Spikes | Knocks the player back on contact as well as stunning plat player which temporarily prevents any inputs |
+| Enemy Attack | The player is knocked away when they are hit as well as stunning plat player which temporarily prevents any inputs |
 
 ### 3.4 Game Loop
 | Stage | Description |
 |---|---|
-| Start / Initialisation | The player spawns in at the start of the game |
-| Core Loop | defeat enemies and go past obstacles to reach further right |
-| Win / End State | The player reaches the right-most edge of the map |
-| Restart | The game takes you to the main menu, where you can start the game over again |
+| Start / Initialisation | The player spawns in at the start of the game, on the leftmost side |
+| Core Loop | defeat enemies and go past obstacles to reach further right with checkpoints to save progress |
+| Win / End State | The player reaches the right-most edge of the map and escapes the industrial wasteland |
+| Restart | The game takes you to the main menu, where you can start the game over again from the beginning |
 
 ### 3.5 Scoring & Progression
 | Element | Description |
 |---|---|
-| Scoring System | The player gains better stats while they progress |
+| Scoring System | The player gains better stats while they progress, such as increased maximum health |
 | Difficulty Progression | the level has more obstacles and enemies do more damage |
-| Unlockables / Levels | yeah |
+| Unlockables / Levels | There is only one large level in Greenfall, where the player must escape  |
 
 ---
 
@@ -161,14 +162,13 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-| Player walk |  |  | |
-| Player Attack | | | |
-| Player Dash | | | |
-| Player Jump | | | |
-| Enemy walk | | | |
-| Enemy Dash | | | |
-| Swaying Grass | | | |
-| Front Background Parallax | | | |
+| Player walk | PlayerAnim | The player walks in a horizontal direction  | |
+| Player Attack | PlayerAnim | The player quickly attacks in front of them | |
+| Player Dash | PlayerAnim | The player lunges forwards and then stops | |
+| Enemy Walk | RobotEnemyAnim | The wheel of the robot rolls, while the body bobs up and down | |
+| Enemy Attack | RobotEnemyAnim | The robot becomes angry and swings its weapon at the player| |
+| Swaying Grass | Animated Rule Tile(Main Tile Palette) | The grass sways randomly on one direction | |
+| Front Background Parallax | ParallaxFront GameObject | Smoke flies from smokestacks in the background | |
 
 > Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
 
@@ -179,8 +179,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Feature | Description | Screenshot |
 |---|---|---|
 | Bullet Glow | Gives the cannon projectile a glowing effect | |
-| | | |
-| | | |
+
 
 > Add screenshot images using: `![Feature Name](./docs/screenshots/lighting_name.png)`
 
@@ -191,8 +190,8 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Shader / Material | Applied To | Description | Screenshot |
 |---|---|---|---|
 | NoFriction| PlayerBody, PlayerOneWayCollider | Makes it so that there is no friction against the walls so the player does not stick| |
-| | | | |
-| | | | |
+| Glow | BallProjectileTemplate | Makes the game object glow brightly | |
+
 
 > Add screenshot images using: `![Shader Name](./docs/screenshots/shader_name.png)`
 
@@ -224,10 +223,11 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 5.2 Sound Effects
 | Sound Effect | Trigger | Source |
 |---|---|---|
-| Player Attack | | |
-| Player Heal | | |
-| Player Hit | | |
-| Player Death Jingle | | |
+| Player Attack | Mouse click | Tristan |
+| Player Heal | Healing item use | Tristan |
+| Player Hit | Player is hit by spike, robot, or cannon | Tristan |
+| Player Death Jingle | Player dies | Tristan |
+| Player Death Jingle | Player dies | dmochas |
 
 ### 5.3 Audio Implementation
 | Feature | Description |
@@ -282,9 +282,8 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 7.3 Scene Management
 | Feature | Description |
 |---|---|
-| Scene Loading Method | |
 | Persistent Data Between Scenes | There is no persistent data between scenes as the game is meant to be played in one sitting |
-| Scene Transition Effects | |
+
 
 ---
 
@@ -367,8 +366,8 @@ No External Packages or plugins were used in the creation of Greenfall
 ### 10.5 Fonts
 | Font Name | Creator / Source | Licence | URL |
 |---|---|---|---|
-| | | | |
-| | | | |
+| Cariopixel | | | |
+
 
 ---
 
@@ -401,7 +400,7 @@ No External Packages or plugins were used in the creation of Greenfall
 
 ---
 
-### Branch 2 — `feature/`
+### Branch 2 — `feature/tilemap`
 
 | Field | Detail |
 |---|---|
@@ -433,7 +432,7 @@ No External Packages or plugins were used in the creation of Greenfall
 
 ---
 
-### Branch 3 — `feature/`
+### Branch 3 — `feature/main-and-pause-menu`
 
 | Field | Detail |
 |---|---|
@@ -464,7 +463,7 @@ No External Packages or plugins were used in the creation of Greenfall
 
 ---
 
-### Branch 4 — `feature/`
+### Branch 4 — `feature/damage-system`
 
 | Field | Detail |
 |---|---|
@@ -495,67 +494,6 @@ No External Packages or plugins were used in the creation of Greenfall
 
 ---
 
-### Branch 5 — `feature/`
-
-| Field | Detail |
-|---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
-
-#### What Was Built
-
-
-#### Key Commits
-| Commit Message | What Changed |
-|---|---|
-| | |
-| | |
-| | |
-
-#### Problems Encountered & Resolved
-| Problem | Resolution |
-|---|---|
-| | |
-| | |
-
-#### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
-
----
-
-### Branch 6 — `feature/`
-
-| Field | Detail |
-|---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
-
-#### What Was Built
-
-
-#### Key Commits
-| Commit Message | What Changed |
-|---|---|
-| | |
-| | |
-| | |
-
-#### Problems Encountered & Resolved
-| Problem | Resolution |
-|---|---|
-| | |
-| | |
-
-#### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
-
----
 
 ### Branch Development Overview
 
@@ -564,8 +502,6 @@ No External Packages or plugins were used in the creation of Greenfall
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
 | `main` | Stable release | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
 | `feature/` | | | | |
 | `feature/` | | | | |
 | `feature/` | | | | |
