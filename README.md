@@ -31,7 +31,7 @@
 ## 1. Game Overview
 
 ### 1.1 Genre
-Action Platformer
+Greenfall is a sidescrolling Action Platformer
 
 ### 1.2 Target Audience
 Greenfall is targeted towards 12-30 year olds who enjoy action platformers, and might not fully understand the impacts of industrialisation on the Earth
@@ -66,6 +66,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
   OR link to a local file:
   [Watch Walkthrough Video](./docs/video/walkthrough.mp4)
 -->
+[Watch Walkthrough Video](./docs/video/Greenfall2MinVideo.mp4)
 
 | Field | Detail |
 |---|---|

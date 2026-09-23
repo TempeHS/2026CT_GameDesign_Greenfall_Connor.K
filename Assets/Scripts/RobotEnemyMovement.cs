@@ -113,13 +113,13 @@ public class RobotEnemyMovement : MonoBehaviour
 
         }
         else{
-            isGrounded=false;
+            //isGrounded=false;
         }
     }
     private void OnCollisionExit2D(Collision2D other)
     {
         
-        isGrounded=false;
+        //isGrounded=false;
 
     }
     private void SetDir()

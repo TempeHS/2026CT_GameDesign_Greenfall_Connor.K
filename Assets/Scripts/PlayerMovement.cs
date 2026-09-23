@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashTime = 0.0f;
     public float playerMaxHealth = 8.0f;
     public float playerHealth = 8.0f;
-    public int iFrames = 0;
+    public float iFrames = 0.0f;
     public float playerKBTime = 0.0f;
     public float playerAttackCD = 0.0f;
     private float playerAttackTime=0.0f;
@@ -96,16 +96,13 @@ public class PlayerMovement : MonoBehaviour
         playerAttackCD -= Time.deltaTime;
         playerAttackTime -= Time.deltaTime;
         walkEmitCD -= Time.deltaTime;
-        
+        iFrames -= Time.deltaTime;
 
         if (playerHealth > playerMaxHealth)
         {
             playerHealth = playerMaxHealth;
         }
-        if (iFrames > 0)
-        {
-            iFrames--;
-        }
+        
         if (iFrames < 0)
         {
             iFrames = 0;
@@ -275,7 +272,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         Vector2 contactPoint = collision.contacts[0].point;
         Vector2 pushDirection = ((Vector2)transform.position - contactPoint);
@@ -285,15 +282,20 @@ public class PlayerMovement : MonoBehaviour
         {
             if (iFrames <= 0)
             {
-                SoundEffectManager.Play("RobotAttack", true);
+                
 
                 playerHealth -= enemy.damage;
+                if (enemy.damage > 0)
+                {
+                    SoundEffectManager.Play("RobotAttack", true);
+                    iFrames = 0.25f;
+                }
                 if (enemy.flashRed)
                 {
                     animator.SetTrigger("flashRed");
                 }
 
-                iFrames = 100;
+                
                 if (enemy.kbAmount > 0)
                 {
                     rb.linearVelocity = Vector2.zero;
@@ -328,12 +330,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 SoundEffectManager.Play("RobotAttack", true);
                 playerHealth -= enemy.damage;
+                if(enemy.damage > 0)
+                {
+                    iFrames = 0.25f;
+                }
                 if (enemy.flashRed)
                 {
                     animator.SetTrigger("flashRed");
                 }
 
-                iFrames = 100;
+                
                 if (enemy.kbAmount > 0)
                 {
                     rb.linearVelocity = Vector2.zero;
