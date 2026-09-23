@@ -37,7 +37,7 @@ Greenfall is a sidescrolling Action Platformer
 Greenfall is targeted towards 12-30 year olds who enjoy action platformers, and might not fully understand the impacts of industrialisation on the Earth
 
 ### 1.3 Game Summary
-Greenfall is a 2d side-scrolling platformer about a character who tries to escape an industrialised wasteland into nature, and has to make their way through obstacles such as enemies and hazards to get through
+Greenfall is a 2d side-scrolling platformer about a character who tries to escape an industrialised wasteland into nature, and has to make their way through obstacles such as spikes and cannons, as well as defeating enemies along the way like robots
 
 ### 1.4 Win / Loss Conditions
 | Condition | Description |
@@ -137,7 +137,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
 | Player Walk Particle | To make the player walk feel more physical | ![Player Walk](./docs/Screenshots/PlayerWalkParticle.png)|
-| Player Dash Particle | Emphasise the speed of the dash |![Player Dash](./docs/Screenshots/PlayerDashParticle.png) |
+| Player Dash Particle | Emphasise the speed of the dash by leaving dust particles |![Player Dash](./docs/Screenshots/PlayerDashParticle.png) |
 | Item Use Particle | Shows that the item is used and what item |![Player Item Use](./docs/Screenshots/ItemUseParticle.png) |
 | Enemy Gore | When the enemy dies, it leaves parts on the ground | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png)|
 | Enemy Death Sparks | The enemy is a robot so it explodes into electricity(in the same screenshot) | ![Enemy Death](./docs/Screenshots/EnemyDeathGore.png) |
@@ -186,7 +186,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 | Shader / Material | Applied To | Description | Screenshot |
 |---|---|---|---|
-| NoFriction| PlayerBody, PlayerOneWayCollider | Makes it so that there is no friction against the walls so the player does not stick (how do I provide an image of this)|![NoFriction](./docs/Screenshots/NoFriction.png) |
+| NoFriction| PlayerBody, PlayerOneWayCollider | Makes it so that there is no friction against the walls so the player does not stick to them |![NoFriction](./docs/Screenshots/NoFriction.png) |
 
 
 
@@ -244,7 +244,7 @@ No additional screenshots are needed, as basically all of the game is shown in
 |---|---|---|
 | Player Health | Tells the player what health they are at | ![Hearts](./docs/Screenshots/PlayerHealth.png) |
 | Player Dash Bar | Tells the player if their dash is on cooldown or not |![Dash Bar](./docs/Screenshots/PlayerDash.png) |
-| Player Held Item | tells the player what item they are holding |![Held Item Slot](./docs/Screenshots/PlayerHeldItem.png) |
+| Player Held Item | Tells the player what item they are holding |![Held Item Slot](./docs/Screenshots/PlayerHeldItem.png) |
 
 
 
@@ -313,7 +313,7 @@ No other design patterns were used
 
 ## 9. Development Techniques & Tutorials Acknowledged
 
-> List every tutorial, course, video, or article that informed or guided your implementation. Include what you used it for and what you changed or adapted.
+
 
 | # | Title | Author / Creator | URL / Source | What You Used It For | What You Changed / Adapted |
 |---|---|---|---|---|---|
@@ -334,14 +334,15 @@ No other design patterns were used
 ### 10.1 Visual Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| Main Tilemap | .png | Tristan | None given | None given | Tilemap in game |
+| Pickups | .png | Yu Lou | None given | None given | Pickup Objects |
+| Greensuit Animations | .png | Tristan | None given | None given | Player animations |
+| Robot Animations | .png | Tristan | None given | None given | Robot enemy animations |
 
 ### 10.2 Audio Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
 |---|---|---|---|---|---|
-| null| .mp3 | Yu Lou | none provided | none provided | Main Menu Music |
+| House | .mp3 | Yu Lou | none provided | none provided | Main Menu Music |
 | bleep028| .ogg | dmochas |  Creative Commons Attribution 4.0 International License  | https://dmochas-assets.itch.io/dmochas-bleeps-pack | Sign Interactable Sounds |
 | Multimedia - Greenfall OST |.wav| Tristan | none provided | none provided | Main Level Soundtrack|
 
@@ -364,7 +365,7 @@ No External Packages or plugins were used in the creation of Greenfall
 ### 10.5 Fonts
 | Font Name | Creator / Source | Licence | URL |
 |---|---|---|---|
-| Cariopixel | GGBotNet | ![Font License](./docs/licences/CariopixelLicense.txt) | https://www.1001fonts.com/cairopixel-font.html |
+| Cariopixel | GGBotNet | [Font License](./docs/licences/CariopixelLicense.txt) | https://www.1001fonts.com/cairopixel-font.html |
 
 
 ---
@@ -402,13 +403,14 @@ No External Packages or plugins were used in the creation of Greenfall
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
+| **Branch Name** | `tilemap` |
+| **Feature Developed** | Tilemap|
+| **Merged Into** | Main |
 | **Date Started** | |
 | **Date Merged** | |
 
 #### What Was Built
+A tilemap that the player can walk and jump on, as well as another non physical tilemap for decorations. Some rule tiles were also built 
 <!-- Describe what this branch added or changed -->
 
 #### Key Commits
@@ -421,8 +423,8 @@ No External Packages or plugins were used in the creation of Greenfall
 #### Problems Encountered & Resolved
 | Problem | Resolution |
 |---|---|
-| | |
-| | |
+| There was a lot of screen tearing from the grid | Changed some settings in the tilemap inspector and increased padding  |
+
 
 #### Screenshot / Evidence
 <!-- Add a screenshot of the feature working -->
@@ -434,14 +436,14 @@ No External Packages or plugins were used in the creation of Greenfall
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
+| **Branch Name** |`main-and-pause-menu` |
+| **Feature Developed** | Main menu screen and pause menu |
+| **Merged Into** | main |
 | **Date Started** | |
 | **Date Merged** | |
 
 #### What Was Built
-
+A main menu scene where the player would first start, as well as a in game pause menu that players could use to pause the game and go back to the main menu
 
 #### Key Commits
 | Commit Message | What Changed |
@@ -451,10 +453,13 @@ No External Packages or plugins were used in the creation of Greenfall
 | | |
 
 #### Problems Encountered & Resolved
+No problems were encountered during this branch, and everything went smoothly
+<!--
 | Problem | Resolution |
 |---|---|
 | | |
 | | |
+-->
 
 #### Screenshot / Evidence
 > `![Feature Name](./docs/screenshots/branch_feature_name.png)`
@@ -465,14 +470,14 @@ No External Packages or plugins were used in the creation of Greenfall
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
+| **Branch Name** | `damage-system` |
+| **Feature Developed** | Player damage and knockback system |
+| **Merged Into** | main |
 | **Date Started** | |
 | **Date Merged** | |
 
 #### What Was Built
-
+A script that would cause the player to take damage from contact with other sources, as well as take knockback from them
 
 #### Key Commits
 | Commit Message | What Changed |
@@ -484,7 +489,7 @@ No External Packages or plugins were used in the creation of Greenfall
 #### Problems Encountered & Resolved
 | Problem | Resolution |
 |---|---|
-| | |
+| The knockback felt unnatural | Made the player apply the knockback to itself, to keep things more organised and make it feel more natural |
 | | |
 
 #### Screenshot / Evidence
@@ -500,9 +505,9 @@ No External Packages or plugins were used in the creation of Greenfall
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
 | `main` | Stable release | | | |
-| `feature/tilemap` | | | | |
-| `feature/main-and-pause-menu` | | | | |
-| `feature/damage-system` | | | | |
+| `feature/tilemap` | Tilemap | | | |
+| `feature/main-and-pause-menu` | Main and Pause menus | | | |
+| `feature/damage-system` | Damage system | | | |
 
 ---
 
