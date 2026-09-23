@@ -167,7 +167,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Enemy Attack | RobotEnemyAnim | The robot becomes angry and swings its weapon at the player| ![Robot Attack Anim](./docs/gifs/RobotAttackAnim.gif) |
 | Front-Most Background Parallax | ParallaxFront GameObject | Smoke flies from smokestacks in the background | ![Parallax Anim](./docs/gifs/ParallaxAnim.gif) |
 
-> Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
+
 
 ---
 
@@ -178,7 +178,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Bullet Glow | Gives the cannon projectile a glowing/bloom effect |![Glowing Effect](./docs/Screenshots/Glow.png) |
 
 
-> Add screenshot images using: `![Feature Name](./docs/screenshots/lighting_name.png)`
+
 
 ---
 
@@ -190,24 +190,26 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 
 
 
-> Add screenshot images using: `![Shader Name](./docs/screenshots/shader_name.png)`
+
 
 ---
-
+<!--
 ### 4.6 Additional Visual Screenshots
 
+No additional screenshots are needed, as basically all of the game is shown in 
 <!--
   Add any other notable screenshots here.
   Syntax: ![Description](./docs/screenshots/filename.png)
 -->
-
+<!--
 | Description | Screenshot |
 |---|---|
-| A part of the main level consisting of a multi leveled building which the player traverses using one way platforms | ![Additional Screenshot 1](./docs/Screenshots/Additional1.png) |
 | | |
 | | |
+-->
 
----
+<!---
+-->
 
 ## 5. Audio Design
 
@@ -240,18 +242,18 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 6.1 HUD Elements
 | Element | Purpose | Screenshot |
 |---|---|---|
-| Player Health | | |
-| Player Dash Bar | | |
-| Player Held Item | | |
+| Player Health | Tells the player what health they are at | ![Hearts](./docs/Screenshots/PlayerHealth.png) |
+| Player Dash Bar | Tells the player if their dash is on cooldown or not |![Dash Bar](./docs/Screenshots/PlayerDash.png) |
+| Player Held Item | tells the player what item they are holding |![Held Item Slot](./docs/Screenshots/PlayerHeldItem.png) |
 
 > Add screenshot images using: `![HUD Element](./docs/screenshots/hud_name.png)`
 
 ### 6.2 Menus
 | Menu | Purpose | Screenshot |
 |---|---|---|
-| Main Menu | | |
-| Pause Menu | | |
-| Game Over Screen | | |
+| Main Menu | This is where the game is first launched and the player can begin to play the game, or exit the game | |
+| Pause Menu | Pauses the game, as well as having some options such as volume sliders, and restart and return to menu buttons | |
+| Game Over Screen | Tells the player that they have died, and allows them to respawn through the return button | |
 
 
 > Add screenshot images using: `![Menu Name](./docs/screenshots/menu_name.png)`
@@ -270,7 +272,7 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 ### 7.2 Level / Environment Screenshots
 | Level / Area | Description | Screenshot |
 |---|---|---|
-| | | |
+| A part of the main level consisting of a multi leveled building which the player traverses using one way platforms | ![Main Level Building](./docs/Screenshots/Additional1.png) |
 | | | |
 | | | |
 
