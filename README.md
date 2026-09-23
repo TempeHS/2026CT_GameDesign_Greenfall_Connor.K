@@ -289,7 +289,7 @@ No additional screenshots are needed, as basically all of the game is shown in
 ### 8.1 Script Summary
 | Script Name | Attached To | Responsibility |
 |---|---|---|
-| | | |
+| PlayerMovement | PlayerBody | Controls most physics/collisions based interactions, as well as handling damage and player animation and sound triggers |
 | | | |
 | | | |
 | | | |
