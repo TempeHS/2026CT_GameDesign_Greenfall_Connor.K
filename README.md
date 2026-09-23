@@ -67,12 +67,10 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
   [Watch Walkthrough Video](./docs/video/walkthrough.mp4)
 -->
 
-[Watch Walkthrough Video](./docs/video/Greenfall2MinVideo.mp4)
-
 | Field | Detail |
 |---|---|
 | **Video Title** | Greenfall Walkthrough |
-| **Link / Embed** | |
+| **Link / Embed** |https://github.com/user-attachments/assets/8ab8e870-6d5d-417f-ac2c-e5dccbcedf03 |
 | **Duration** | 2:09 |
 | **Description** | A full walkthrough of Greenfall |
 
