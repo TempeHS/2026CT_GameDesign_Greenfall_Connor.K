@@ -162,11 +162,10 @@ Greenfall is a 2d side-scrolling platformer about a character who tries to escap
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
 | Player Walk | PlayerAnim | The player walks in a horizontal direction  | ![Player Walk Anim](./docs/gifs/PlayerWalkAnim.gif) |
-| Player Dash | PlayerAnim | The player lunges forwards and then stops | |
-| Enemy Walk | RobotEnemyAnim | The wheel of the robot rolls, while the body bobs up and down | |
-| Enemy Attack | RobotEnemyAnim | The robot becomes angry and swings its weapon at the player| |
-| Swaying Grass | Animated Rule Tile(Main Tile Palette) | The grass sways randomly on one direction | |
-| Front-Most Background Parallax | ParallaxFront GameObject | Smoke flies from smokestacks in the background | |
+| Player Dash | PlayerAnim | The player lunges forwards and then stops | ![Player Dash Anim](./docs/gifs/PlayerDashAnim.gif) |
+| Enemy Walk | RobotEnemyAnim | The wheel of the robot rolls, while the body bobs up and down | ![Robot Walk Anim](./docs/gifs/RobotWalkAnim.gif) |
+| Enemy Attack | RobotEnemyAnim | The robot becomes angry and swings its weapon at the player| ![Robot Attack Anim](./docs/gifs/RobotAttackAnim.gif) |
+| Front-Most Background Parallax | ParallaxFront GameObject | Smoke flies from smokestacks in the background | ![Parallax Anim](./docs/gifs/ParallaxAnim.gif) |
 
 > Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
 
