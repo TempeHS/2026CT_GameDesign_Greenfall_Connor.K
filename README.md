@@ -490,7 +490,7 @@ You can find this branch in the repository
 
 ### Branch Development Overview
 
-> Complete this summary table once all branches are finished.
+
 
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
