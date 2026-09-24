@@ -384,7 +384,7 @@ No External Packages or plugins were used in the creation of Greenfall
 
 ## 12. Branch Development Summary
 
-> One section per feature branch. Add or remove sections to match your repository. Branches should be named for the feature they implement e.g. `feature/player-movement`. Link each branch name directly to the branch in your GitHub repository.
+
 
 ---
 
@@ -403,27 +403,26 @@ No External Packages or plugins were used in the creation of Greenfall
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | `tilemap` |
+| **Branch Name** | `feature/tilemap` |
 | **Feature Developed** | Tilemap|
-| **Merged Into** | Main |
-| **Date Started** | |
-| **Date Merged** | |
+| **Merged Into** | main |
+| **Date Started** | 17/05/26 |
+| **Date Merged** | 28/06/26 |
 
 #### What Was Built
-A tilemap that the player can walk and jump on, as well as another non physical tilemap for decorations. Some rule tiles were also built 
+A tilemap that the player can walk and jump on, as well as another non physical tilemap for decorations. Some rule tiles were also built such as grass and pipe connector tiles 
 <!-- Describe what this branch added or changed -->
 
 #### Key Commits
 | Commit Message | What Changed |
 |---|---|
-| | |
-| | |
-| | |
+| WIP: added tilemap | Added the main tilemap |
+| WIP: tilemap sprites  | Added more sprites for the tilemap |
 
 #### Problems Encountered & Resolved
 | Problem | Resolution |
 |---|---|
-| There was a lot of screen tearing from the grid | Changed some settings in the tilemap inspector and increased padding  |
+| There was a lot of screen tearing from the grid | Changed some settings in the tilemap inspector and increased padding, and changed the pixels per unit |
 
 
 #### Screenshot / Evidence
@@ -436,11 +435,11 @@ A tilemap that the player can walk and jump on, as well as another non physical 
 
 | Field | Detail |
 |---|---|
-| **Branch Name** |`main-and-pause-menu` |
+| **Branch Name** |`feature/main-and-pause-menu` |
 | **Feature Developed** | Main menu screen and pause menu |
 | **Merged Into** | main |
-| **Date Started** | |
-| **Date Merged** | |
+| **Date Started** | 15/06/26 |
+| **Date Merged** | 17/06/26 |
 
 #### What Was Built
 A main menu scene where the player would first start, as well as a in game pause menu that players could use to pause the game and go back to the main menu
@@ -448,9 +447,8 @@ A main menu scene where the player would first start, as well as a in game pause
 #### Key Commits
 | Commit Message | What Changed |
 |---|---|
-| | |
-| | |
-| | |
+| Complete: Pause menu | The scripts and design of the pause menu was finalised |
+| UI: Button | Made the first button for the main menu |
 
 #### Problems Encountered & Resolved
 No problems were encountered during this branch, and everything went smoothly
@@ -470,27 +468,26 @@ No problems were encountered during this branch, and everything went smoothly
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | `damage-system` |
+| **Branch Name** | `feature/damage-system` |
 | **Feature Developed** | Player damage and knockback system |
 | **Merged Into** | main |
-| **Date Started** | |
-| **Date Merged** | |
+| **Date Started** | 20/05/26 |
+| **Date Merged** | 07/06/26 |
 
 #### What Was Built
-A script that would cause the player to take damage from contact with other sources, as well as take knockback from them
+A script that would cause the player to take damage from contact with other sources, as well as take knockback from them, as well as a script that would display and manage the player health
 
 #### Key Commits
 | Commit Message | What Changed |
 |---|---|
-| | |
-| | |
-| | |
+| Complete: player Health bar | Completed the player health HUD |
+| Complete: PlayerKB and Damage system | Completed the player knockback and damage behaviour |
 
 #### Problems Encountered & Resolved
 | Problem | Resolution |
 |---|---|
 | The knockback felt unnatural | Made the player apply the knockback to itself, to keep things more organised and make it feel more natural |
-| | |
+
 
 #### Screenshot / Evidence
 > `![Feature Name](./docs/screenshots/branch_feature_name.png)`
@@ -504,10 +501,10 @@ A script that would cause the player to take damage from contact with other sour
 
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
-| `main` | Stable release | | | |
-| `feature/tilemap` | Tilemap | | | |
-| `feature/main-and-pause-menu` | Main and Pause menus | | | |
-| `feature/damage-system` | Damage system | | | |
+| `main` | Stable release | 14/05/26 | It is main | |
+| `feature/tilemap` | Tilemap | 17/05/26 | 28/06/26 | |
+| `feature/main-and-pause-menu` | Main and Pause menus | 15/06/26 | 17/06/26 | |
+| `feature/damage-system` | Damage system | 20/05/26 | 07/06/26 | |
 
 ---
 
