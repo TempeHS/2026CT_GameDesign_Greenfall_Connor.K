@@ -394,8 +394,8 @@ No External Packages or plugins were used in the creation of Greenfall
 |---|---|
 | **Branch Name** | `main` |
 | **Purpose** | Stable, releasable version of the game |
-| **Merged From** | |
-| **Final Commit** | |
+| **Merged From** | `feature/tilemap`, `feature/main-and-pause-menu`,`feature/damage-system`|
+| **Final Commit** | WIP: Level Design |
 
 ---
 
@@ -427,9 +427,7 @@ A tilemap that the player can walk and jump on, as well as another non physical 
 
 #### Screenshot / Evidence
 <!-- Add a screenshot of the feature working -->
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
-
----
+You can find this branch in the repository
 
 ### Branch 3 — `feature/main-and-pause-menu`
 
@@ -460,9 +458,7 @@ No problems were encountered during this branch, and everything went smoothly
 -->
 
 #### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
-
----
+You can find this branch in the repository
 
 ### Branch 4 — `feature/damage-system`
 
@@ -490,10 +486,7 @@ A script that would cause the player to take damage from contact with other sour
 
 
 #### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
-
----
-
+You can find this branch in the repository
 
 ### Branch Development Overview
 
@@ -501,10 +494,10 @@ A script that would cause the player to take damage from contact with other sour
 
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
-| `main` | Stable release | 14/05/26 | It is main | |
-| `feature/tilemap` | Tilemap | 17/05/26 | 28/06/26 | |
-| `feature/main-and-pause-menu` | Main and Pause menus | 15/06/26 | 17/06/26 | |
-| `feature/damage-system` | Damage system | 20/05/26 | 07/06/26 | |
+| `main` | Stable release | 14/05/26 | It is main | Default |
+| `feature/tilemap` | Tilemap | 17/05/26 | 28/06/26 | Behind |
+| `feature/main-and-pause-menu` | Main and Pause menus | 15/06/26 | 17/06/26 | Behind |
+| `feature/damage-system` | Damage system | 20/05/26 | 07/06/26 | Behind |
 
 ---
 
